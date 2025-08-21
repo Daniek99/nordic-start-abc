@@ -12,6 +12,9 @@ import LearnerHome from "./pages/LearnerHome";
 import LearnerProfile from "./pages/LearnerProfile";
 import DailyWordDetail from "./pages/DailyWordDetail";
 import AdminDashboard from "./pages/AdminDashboard";
+import CreateDailyWord from "./pages/CreateDailyWord";
+import ClassroomManagement from "./pages/ClassroomManagement";
+import WeeklyTests from "./pages/WeeklyTests";
 import { ProtectedRoute } from "@/components/auth/ProtectedRoute";
 
 const queryClient = new QueryClient();
@@ -29,7 +32,9 @@ const App = () => (
           <Route element={<ProtectedRoute role="teacher" />}>
             <Route path="/teacher" element={<TeacherDashboard />} />
             <Route path="/teacher/profile" element={<TeacherProfile />} />
-            <Route path="/teacher/daily-word/:dailyWordId" element={<DailyWordDetail />} />
+            <Route path="/teacher/create-daily-word" element={<CreateDailyWord />} />
+            <Route path="/teacher/classrooms" element={<ClassroomManagement />} />
+            <Route path="/teacher/tests" element={<WeeklyTests />} />
           </Route>
 
           <Route element={<ProtectedRoute role="learner" />}>
